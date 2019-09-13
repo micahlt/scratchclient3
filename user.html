@@ -20,8 +20,9 @@
     <div class = "pfp" id = 'pfp'></div>
     <h2 id = "username"></h2>
     <br>
-    <div class = "projects-box"><div id = "project-1"></div><div id ="project-2"></div><div id = "project-3"></div><div id = "project-3"></div></div>
-    <br><br>
+    <div class = "projects-box"><div id = "project-1"></div><div id ="project-2"></div><div id = "project-3"></div><div id = "project-4"></div><div id ="project-5"></div><div id ="project-6"></div></div>
+    <br><div id = "featured-project">
+    </div><br>
     <p>This is an unofficial project run by @-Archon-, @-Ekmand- and @smileycreations15</p>
     <script src="script.js"></script>
     <script> function swap(){
@@ -29,17 +30,6 @@
  }
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
- }
-function getUser() {
-  var txt;
-  var person = prompt("Enter your Scratch username", "griffpatch");
-  if (person == null || person == "") {
-    txt = "User cancelled the prompt.";
-  } else {
-    txt = person;
-    window.location = 'user.html?x=' + txt;
-  }
-}
-</script>
+ }</script>
   </body>
 </html>
