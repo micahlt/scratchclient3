@@ -30,6 +30,17 @@ invert_colors
  }
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
- }</script>
+ }
+ function getUser() {
+  var txt;
+  var person = prompt("Enter your Scratch username", "griffpatch");
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = person;
+    window.location = 'user.html?x=' + txt;
+  }
+}
+</script>
   </body>
 </html>
