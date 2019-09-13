@@ -76,7 +76,10 @@ img {
       box-shadow: 1px 1px 10px #999; 
       display: grid-item;
 }
-
+.project-6 {
+      box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
+}
 .projects-box {
   background-color: #eee;
   color: black;
