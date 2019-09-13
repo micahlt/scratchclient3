@@ -24,7 +24,7 @@ var xhttp = new XMLHttpRequest();
   var all = false;
 	var a = []
 function fetch1(i = 0){
-		 fetch("https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
+		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
 	 if (e.status !== 200){
 		 // err handle
 	 }
