@@ -52,30 +52,56 @@ img {
 
 .project-1 {
     box-shadow: 1px 1px 10px #999; 
+    display: grid-item;
     }
 
 .project-2 {
       box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
     }
 
 .project-3 {
       box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
 }
 
 
 .project-4 {
       box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
 }
 
 
 .project-5 {
       box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
 }
 
 .projects-box {
-  height: 400px;
-  white-space:nowrap;
-  overflow: auto;
+  background-color: #eee;
+  color: black;
+  height: auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow: scroll;
+  box-shadow: 3px 3px 10px #c9c9c9;
+}
+.news-box {
+  background-color: #eee;
+  color: black;
+  height: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 15px 15px 15px 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  box-shadow: 3px 3px 10px #c9c9c9;
 }
 
 /*dark theme*/
