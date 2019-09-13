@@ -11,8 +11,8 @@
     <div class="navbar">
   <a href="https://scratch.mit.edu/">Scratch</a>
   <a href="#">News</a>
-  <a href="index.html">User</a>
-	 <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
+  <a href="#" onclick="getUser()">User</a>
+  <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
 invert_colors
 </i></a>
 
@@ -20,13 +20,26 @@ invert_colors
 <br><br>
 <div class="main">
 <h1>News</h1>
-<div class = "news-box"><h2><br>We're proud to announce the 0.6 Beta of Scratch Client 3!</h2><br><p>Introducing version 0.6.1, the first stable version of the Scratch Client 3 project!  Here’s how it works: visit https://micahlt.github.io/scratchclient3/?x=griffpatch and replace “griffpatch” with your own username!  Currently, you’ll be able to see the user’s name, profile picture, and their most recent projects.  Bright colors hurting your eyes?  Click the dark mode button in the navbar.  </p></div>
+<div class = "news-box"><h2><br>SC3 got an update!</h2><br><p>Version 0.7.1 introduces a new homepage, still compatible with dark mode.  You can also enter a username in the textbox on the front page to visit that user's page.  Be ready, we're preparing several more cool updates.  Coming soon!</p></div>
+</div><br>
+<div class = "news-box"><h2><br>We’d like to announce the 0.6 Beta of Scratch Client 3!</h2><br><p>Introducing version 0.6.1, the first stable version of the Scratch Client 3 project!  Here’s how it works: visit https://micahlt.github.io/scratchclient3/?x=griffpatch and replace “griffpatch” with your own username!  Currently, you’ll be able to see the user’s name, profile picture, and their most recent projects.  Bright colors hurting your eyes?  Click the dark mode button in the navbar.  </p></div>
 </div>
 <script> function swap(){
 	 if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem("dark",false)} else {document.body.classList.add('dark');localStorage.setItem("dark",true)}
  }
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
- }</script>
+ }
+ function getUser() {
+  var txt;
+  var person = prompt("Enter your Scratch username", "griffpatch");
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = person;
+    window.location = 'user.html?x=' + txt;
+  }
+}
+</script>
   </body>
 </html>
