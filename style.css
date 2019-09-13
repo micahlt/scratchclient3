@@ -35,9 +35,9 @@ body {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
 
-* {
-margin: 0;
-padding: 0;
+body {
+	margin: 0;
+	padding: 0;
 }
 
 .pfp {
@@ -76,7 +76,10 @@ img {
       box-shadow: 1px 1px 10px #999; 
       display: grid-item;
 }
-
+.project-6 {
+      box-shadow: 1px 1px 10px #999; 
+      display: grid-item;
+}
 .projects-box {
   background-color: #eee;
   color: black;
@@ -94,11 +97,10 @@ img {
   background-color: #eee;
   color: black;
   height: auto;
-  margin-left: 15%;
-  margin-right: 15%;
   border-radius: 15px 15px 15px 15px;
   padding-right: 15px;
   padding-left: 15px;
+	padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
   box-shadow: 3px 3px 10px #c9c9c9;
@@ -131,7 +133,7 @@ img {
 	color:#eee;
 }
 
-* {
+*:not(button) {
 margin: 0;
 padding: 0;
 }

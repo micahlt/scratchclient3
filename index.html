@@ -13,12 +13,12 @@
   <a href="index.html">Home</a>
   <a href="news.html">News</a>
   <a href="#" onclick="getUser()">User</a>
-  <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
+	 <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
 invert_colors
 </i></a>
 </div>
 
-<div class="main"></div><br><br><div class = "news-box"><h1>Scratch Client 3</h1><br><h2><em>version 0.7.3</em></h2><p>Scratch Client 3 is a reimagined version of the Scratch webpage.  It’s based on pure HTML, CSS, and Javascript as well as the Scratch API.  It’s hosted on GitHub and runs using GitHub pages.  This is an unofficial project run by @-Archon-, @-Ekmand- and @smileycreations15.  </p></div><br><br><br><br>
+<div class="main"></div><br><br><div class = "news-box"><h1>Scratch Client 3</h1><br><h2><em>version 0.8.0</em></h2><p>Scratch Client 3 is a reimagined version of the Scratch webpage.  It’s based on pure HTML, CSS, and Javascript as well as the Scratch API.  It’s hosted on GitHub and runs using GitHub pages.  This is an unofficial project run by @-Archon-, @-Ekmand- and @smileycreations15.  <br><button onclick="getUser()">Try it</button></p></div><br><br><br><br>
     <p>Scratch Client 3 is not related to nor affiliated with Scratch or the Scratch Team.</p>
     <script> function swap(){
 	 if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem("dark",false)} else {document.body.classList.add('dark');localStorage.setItem("dark",true)}
@@ -26,7 +26,7 @@ invert_colors
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
  }
-function getUser() {
+ function getUser() {
   var txt;
   var person = prompt("Enter your Scratch username", "griffpatch");
   if (person == null || person == "") {
@@ -35,6 +35,7 @@ function getUser() {
     txt = person;
     window.location = 'user.html?x=' + txt;
   }
-}</script>
+}
+</script>
   </body>
 </html>

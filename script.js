@@ -19,7 +19,7 @@ var xhttp = new XMLHttpRequest();
       document.getElementById('username').innerHTML = obj.username;
      }
   };
-  xhttp.open("GET", "https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
+  xhttp.open("GET", "https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
   xhttp.send();
   var all = false;
 	var a = []
@@ -37,6 +37,24 @@ function fetch1(i = 0){
  })
 }
 fetch1()
+var b = []
+var all2 = false
+function fetch2(i = 0){
+		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites?offset=" + i).then(e=>{
+	 if (e.status !== 200){
+		 // err handle
+	 }
+	 return e.json()
+ }).then(e=>{
+	 all2++
+	 if (e.length === 0) {all2=true;return};
+	 b = e
+	 fetch2(i + 40)
+ })
+}
+fetch2()
+var c = []
+var all3 = false
 var e = setInterval(()=>{
 	if (all === true){
 		clearInterval(e)
@@ -50,13 +68,13 @@ a.reverse().forEach((obj,idx)=>{
 		 "https://scratch.mit.edu/projects/" + String(obj.id) // url
 		 if (!obj.public && obj.visibility !== "hidden") return
 		 console.log(idxs)
-		 if (idxs === 5) {
+		 /*if (idxs === 5) {
 			 		document.getElementById('project-6').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
 		 } else if (idxs === 4){
 			 		 document.getElementById('project-5').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
 	 	} if (idxs === 3){
 			 		 document.getElementById('project-4').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
-	 	} if (idxs === 2){
+	 	} */if (idxs === 2){
 			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
 		 } else if (idxs === 1){
 			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
@@ -65,7 +83,6 @@ a.reverse().forEach((obj,idx)=>{
 		 }
 		idxs++
 	 })
-	
 	 /* shuffle(shuffle(shuffle(a.reverse()))).forEach((obj,idx)=>{
 		 if (idxs > 2){
 			 return
@@ -84,6 +101,7 @@ a.reverse().forEach((obj,idx)=>{
 		 }
 		idxs++
 	 })*/
+    // yup :) last loved and last faved on the works
 	}
 },100)
  function swap(){
@@ -92,7 +110,7 @@ a.reverse().forEach((obj,idx)=>{
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
  }
- function shuffle(array) {
+/* function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
@@ -109,4 +127,24 @@ a.reverse().forEach((obj,idx)=>{
   }
 
   return array;
-}
+}*/
+fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr)).then(e=>{
+     if (e.status !== 200){
+         // err handle
+     }
+     return e.text()
+ }).then(e=>{
+    var parser = new DOMParser()
+    var doc = parser.parseFromString(e,"text/html")
+    var e = doc.getElementById("featured-project").href.split("/")
+    var id = e[e.length - 2]
+    fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects/" + id).then(e=>{
+       if (e.status !== 200){
+           // err handle
+       }
+       return e.json()
+    }).then(e=>{
+      document.getElementById('featured-project').innerHTML = "<p>" + e + "</p>";
+      console.log(e)
+    })    
+})
