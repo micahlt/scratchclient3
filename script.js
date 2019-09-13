@@ -83,3 +83,12 @@ a.reverse().forEach((obj,idx)=>{
 		 }
 		idxs++
 	 })
+	}
+},100)
+ function swap(){
+	 if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem("dark",false)} else {document.body.classList.add('dark');localStorage.setItem("dark",true)}
+ }
+ if (localStorage.getItem("dark") ==="true"){
+	 document.body.classList.add("dark")
+ }
+/* function shuffle(array) {
