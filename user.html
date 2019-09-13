@@ -14,12 +14,12 @@
   <a href="news.html">News</a>
   <a href="#" onclick="getUser()">User</a>
 	 <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
-invert_colors
+brightness_medium
 </i></a>
 </div>
 
 <div class="main"></div><br><br>
-    <div class = "pfp" id = 'pfp'></div>
+    <div class = "pfp" id = "pfp"></div>
     <h2 id = "username"></h2>
     <br>
     <div class = "projects-box"><div id = "project-1"></div><div id ="project-2">
@@ -34,6 +34,17 @@ invert_colors
  }
  if (localStorage.getItem("dark") ==="true"){
 	 document.body.classList.add("dark")
- }</script>
+ }
+     function getUser() {
+  var txt;
+  var person = prompt("Enter your Scratch username", "griffpatch");
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = person;
+    window.location = 'user.html?x=' + txt;
+  }
+}
+    </script>
   </body>
 </html>
