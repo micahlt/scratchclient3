@@ -1,6 +1,3 @@
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;
     });
     return vars;
@@ -24,7 +21,7 @@ var xhttp = new XMLHttpRequest();
   var all = false;
 	var a = []
 function fetch1(i = 0){
-		 fetch("https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
+		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
 	 if (e.status !== 200){
 		 // err handle
 	 }
@@ -75,76 +72,11 @@ a.reverse().forEach((obj,idx)=>{
 	 	} if (idxs === 3){
 			 		 document.getElementById('project-4').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
 	 	} */if (idxs === 2){
-			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
+			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 } else if (idxs === 1){
-			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
+			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 } else if (idxs === 0){
-			 		 document.getElementById('project-1').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
+			 		 document.getElementById('project-1').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 }
 		idxs++
 	 })
-	 /* shuffle(shuffle(shuffle(a.reverse()))).forEach((obj,idx)=>{
-		 if (idxs > 2){
-			 return
-		 }
-		 obj.image // image url
-		 obj.title // title of project
-		 "https://scratch.mit.edu/projects/" + String(obj.id) // url
-		 if (!obj.public && obj.visibility !== "hidden") return
-		 console.log(idxs)
-		 if (idxs === 2){
-			 		 document.getElementById('project-1').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img height="250px" width="auto" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
-		 } else if (idxs === 1){
-			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img height="250px" width="auto" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
-		 } else if (idxs === 0){
-			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img height="250px" width="auto" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
-		 }
-		idxs++
-	 })*/
-    // yup :) last loved and last faved on the works
-	}
-},100)
- function swap(){
-	 if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem("dark",false)} else {document.body.classList.add('dark');localStorage.setItem("dark",true)}
- }
- if (localStorage.getItem("dark") ==="true"){
-	 document.body.classList.add("dark")
- }
-/* function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}*/
-fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr)).then(e=>{
-     if (e.status !== 200){
-         // err handle
-     }
-     return e.text()
- }).then(e=>{
-    var parser = new DOMParser()
-    var doc = parser.parseFromString(e,"text/html")
-    var e = doc.getElementById("featured-project").href.split("/")
-    var id = e[e.length - 2]
-    fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects/" + id).then(e=>{
-       if (e.status !== 200){
-           // err handle
-       }
-       return e.json()
-    }).then(e=>{
-      document.getElementById('featured-project').innerHTML = "<p>" + e + "</p>";
-      console.log(e)
-    })    
-})
