@@ -33,6 +33,7 @@ body {
 /* Main content */
 .main {
   margin-top: 30px; /* Add a top margin to avoid content overlay */
+  scrollbar-width: none;  /* Hide the scrollbar on desktop */
 }
 
 body {
@@ -92,6 +93,11 @@ img {
   grid-template-columns: auto auto auto;
   overflow: scroll;
   box-shadow: 3px 3px 10px #c9c9c9;
+
+::-webkit-scrollbar { 
+    display: none; /* Hide the scrollbar on desktop */
+}
+	
 }
 .news-box {
   background-color: #eee;
