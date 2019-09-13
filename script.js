@@ -1,4 +1,7 @@
-        vars[key] = value;
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
     });
     return vars;
 }
@@ -16,12 +19,12 @@ var xhttp = new XMLHttpRequest();
       document.getElementById('username').innerHTML = obj.username;
      }
   };
-  xhttp.open("GET", "https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
+  xhttp.open("GET", "https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
   xhttp.send();
   var all = false;
 	var a = []
 function fetch1(i = 0){
-		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
+		 fetch("https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
 	 if (e.status !== 200){
 		 // err handle
 	 }
@@ -37,7 +40,7 @@ fetch1()
 var b = []
 var all2 = false
 function fetch2(i = 0){
-		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites?offset=" + i).then(e=>{
+		 fetch("https://corspaihost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites?offset=" + i).then(e=>{
 	 if (e.status !== 200){
 		 // err handle
 	 }
