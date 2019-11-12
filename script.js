@@ -23,6 +23,7 @@ var xhttp = new XMLHttpRequest();
   xhttp.send();
   var all = false;
 	var a = []
+  var aa = []
 function fetch1(i = 0){
 		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
 	 if (e.status !== 200){
@@ -33,26 +34,12 @@ function fetch1(i = 0){
 	 all++
 	 if (e.length === 0) {all=true;return};
 	 a = e
+    aa = [...aa,...e]
 	 fetch1(i + 40)
  })
 }
 fetch1()
-var b = []
-var all2 = false
-function fetch2(i = 0){
-		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites?offset=" + i).then(e=>{
-	 if (e.status !== 200){
-		 // err handle
-	 }
-	 return e.json()
- }).then(e=>{
-	 all2++
-	 if (e.length === 0) {all2=true;return};
-	 b = e
-	 fetch2(i + 40)
- })
-}
-fetch2()
+// b = faves
 var c = []
 var all3 = false
 var e = setInterval(()=>{
@@ -138,13 +125,38 @@ fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeUR
     var doc = parser.parseFromString(e,"text/html")
     var e = doc.getElementById("featured-project").href.split("/")
     var id = e[e.length - 2]
-    fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects/" + id).then(e=>{
+    document.getElementById('featured-project').innerHTML = '<div class = "lovfeat">Featured</div><a href = "https://scratch.mit.edu/projects/' + id + '/"><img src = "https://cdn2.scratch.mit.edu/get_image/project/' + id + '_480x360.png' + '" width="45%" style="border-radius: 20px; margin: 20px"></a><br>';
+    /*("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects/" + id).then(e=>{
        if (e.status !== 200){
            // err handle
        }
        return e.json()
-    }).then(e=>{
-      document.getElementById('featured-project').innerHTML = "<img src = '" + "https://cdn2.scratch.mit.edu/get_image/project/" + JSON.stringify(e.id) + "_480x360.png' width='32%' style='border-radius: 20px; margin: 20px'>";
-      console.log(e)
-    })    
+    }).then(dat=>{
+      console.log(dat)
+      document.getElementById('featured-project').innerHTML = '<img src = "' + dat.image + '" width="32%" style="border-radius: 20px; margin: 20px">';
+      // document.getElementById('featured-project').innerHTML = JSON.stringify(e);
+    })  */  
+})
+fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites").then(e=>{
+     if (e.status !== 200){
+         // err handle
+     }
+     return e.text()
+ }).then(e=>{
+    var parser = new DOMParser()
+    var doc = parser.parseFromString(e,"text/html")
+    var e = doc.querySelector(".project a").href.split("/")
+    var id = e[e.length - 2]
+    console.log(id)
+    document.getElementById('last-loved').innerHTML = '<div class = "lovfeat">Last Loved</div><a href = "https://scratch.mit.edu/projects/' + id + '/"><img src = "https://cdn2.scratch.mit.edu/get_image/project/' + id + '_480x360.png' + '" width="45%" style="border-radius: 20px; margin: 20px"></a><br>';
+    /*("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects/" + id).then(e=>{
+       if (e.status !== 200){
+           // err handle
+       }
+       return e.json()
+    }).then(dat=>{
+      console.log(dat)
+      document.getElementById('featured-project').innerHTML = '<img src = "' + dat.image + '" width="32%" style="border-radius: 20px; margin: 20px">';
+      // document.getElementById('featured-project').innerHTML = JSON.stringify(e);
+    })  */  
 })
