@@ -11,6 +11,8 @@ Introducing SC3!  We took the Scratch web client and imagined it to be more mode
 
 📱 Responsive- SC3 works perfectly to resize on mobile and desktop.  
 
+❤️ Loves- See the last loved project from a user
+
 👷 Under Development- The Client is constantly undergoing development, so you can prepare for some cool new features.
 
 #### Speaking of development, here's some features coming soon!
@@ -22,5 +24,3 @@ Introducing SC3!  We took the Scratch web client and imagined it to be more mode
 📰 Scratch News- See the Scratch News on the homepage of the website
 
 ⭐️ Favorites- See the last favorited project from a user
-
-❤️ Loves- See the last loved project from a user
