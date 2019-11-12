@@ -3,7 +3,7 @@
 
 Introducing SC3!  We took the Scratch web client and imagined it to be more modern and responsive.  Check it out the screenshot and then below it for the feature list.  
 
-![img](https://raw.githubusercontent.com/micahlt/scratchclient3/master/docs/7A1D26F4-FDF4-4AF4-85EF-9A637F1B524E.jpeg)
+![img](https://github.com/micahlt/scratchclient3/raw/master/docs/BD046DE0-159A-471A-B9E9-9504F47F5286.jpeg)
 
 🌚 Dark Mode- That bright white and blue hurting your eyes?  Turn on dark mode for a better experience.
 
