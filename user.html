@@ -1,50 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Scratch 3</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href = "https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="">
     <div class="navbar">
-  <a href="https://scratch.mit.edu/">Scratch</a>
-  <a href="index.html">Home</a>
-  <a href="news.html">News</a>
-  <a href="#" onclick="getUser()">User</a>
-	 <a href="#" onclick="event.preventDefault();swap()"><i class="material-icons">
-brightness_medium
-</i></a>
-</div>
+      <a href="https://scratch.mit.edu/">Scratch</a>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="#" onclick="getUser()">User</a>
+      <a href="#" onclick="event.preventDefault();swap()"
+        ><i class="material-icons">
+          brightness_medium
+        </i></a
+      >
+    </div>
 
-<div class="main"></div><br><br>
-    <div class = "pfp" id = "pfp"></div>
-    <h2 id = "username"></h2>
-    <br>
-    <div class = "projects-box"><div id = "project-1"></div><div id ="project-2">
-      
-      </div><div id = "project-3"></div><div id = "project-4"></div><div id ="project-5"></div><div id ="project-6"></div></div>
-    <br><div id = "featured-project">
-    </div><br>
-    <p>This is an unofficial project run by @-Archon-, @-Ekmand- and @smileycreations15</p>
+    <div class="main"></div>
+    <br /><br />
+    <div class="pfp" id="pfp"></div>
+    <h2 id="username"></h2>
+    <br />
+    <br />
+    <div class="projects-box">
+      <div id="project-1"></div>
+      <div id="project-2"></div>
+      <div id="project-3"></div>
+      <div id="project-4"></div>
+      <div id="project-5"></div>
+      <div id="project-6"></div>
+    </div>
+<br>
+    <i class="material-icons projecticon">
+          pageview
+        </i>
+      <div id="featured-project" class="featuredproject"></div>
+    <i class="material-icons projecticon">
+          favorite
+        </i>
+      <div id="last-loved" class="lastloved"></div>
+    <br />
+    <p>
+      This is an unofficial project run by @-Archon-, @-Ekmand- and
+      @smileycreations15
+    </p>
     <script src="script.js"></script>
-    <script> function swap(){
-	 if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem("dark",false)} else {document.body.classList.add('dark');localStorage.setItem("dark",true)}
- }
- if (localStorage.getItem("dark") ==="true"){
-	 document.body.classList.add("dark")
- }
-     function getUser() {
-  var txt;
-  var person = prompt("Enter your Scratch username", "griffpatch");
-  if (person == null || person == "") {
-    txt = "User cancelled the prompt.";
-  } else {
-    txt = person;
-    window.location = 'user.html?x=' + txt;
-  }
-}
+    <script>
+      function swap() {
+        if (document.body.classList.contains("dark")) {
+          document.body.classList.remove("dark");
+          localStorage.setItem("dark", false);
+        } else {
+          document.body.classList.add("dark");
+          localStorage.setItem("dark", true);
+        }
+      }
+      if (localStorage.getItem("dark") === "true") {
+        document.body.classList.add("dark");
+      }
+      function getUser() {
+        var txt;
+        var person = prompt("Enter your Scratch username", "griffpatch");
+        if (person == null || person == "") {
+          txt = "User cancelled the prompt.";
+        } else {
+          txt = person;
+          window.location = "user.html?x=" + txt;
+        }
+      }
     </script>
   </body>
 </html>
+
