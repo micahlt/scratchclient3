@@ -87,7 +87,7 @@ img {
   height: auto;
   margin-left: 40px;
   margin-right: 40px;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 5px 5px 5px 5px;
   text-align: center;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -98,7 +98,7 @@ img {
   background-color: #eee;
   color: black;
   height: auto;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 5px 5px 5px 5px;
   padding-right: 15px;
   padding-left: 15px;
 	padding-top: 15px;
@@ -155,7 +155,7 @@ padding: 0;
   height: auto;
   margin-left: 40px;
   margin-right: 40px;
-  border-radius: 15px 15px 15px 15px; 
+  border-radius: 5px 5px 5px 5px; 
   box-shadow: 3px 3px 50px black;
 }
 .dark > .news-box {
@@ -164,7 +164,7 @@ padding: 0;
   height: auto;
   margin-left: 15%;
   margin-right: 15%;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 5px 5px 5px 5px;
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 15px;
@@ -204,7 +204,7 @@ body.dark {
   justify-content: center;
 }
 .one {
-  border-radius:12px;
+  border-radius: 6px;
   width:55%;
   margin:0 10% 20px 10%;
 }
