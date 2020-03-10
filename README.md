@@ -1,3 +1,5 @@
+![updated: 12/5/19](https://img.shields.io/badge/updated-12/5/19-red) ![status: dormant](https://img.shields.io/badge/status-dormant-yellow)
+
 # Scratch Client 3
 ### A re-imagining of the Scratch Web Client
 
