@@ -1,15 +1,13 @@
-![updated: 12/5/19](https://img.shields.io/badge/updated-12/5/19-red) ![status: dormant](https://img.shields.io/badge/status-dormant-yellow)
+![updated: 12/5/19](https://img.shields.io/badge/updated-12/5/19-red) ![status: help needed](https://img.shields.io/badge/status-help_needed-yellow)
 
 # Scratch Client 3
 ### A re-imagining of the Scratch Web Client
 
-Introducing SC3!  We took the Scratch web client and imagined it to be more modern and responsive.  Check it out the screenshot and then below it for the feature list.  
-
-![img](https://github.com/micahlt/scratchclient3/raw/master/docs/BD046DE0-159A-471A-B9E9-9504F47F5286.jpeg)
+Introducing SC3!  We took the Scratch web client and imagined it to be more modern and responsive.  Check out the features:
 
 🌚 Dark Mode- That bright white and blue hurting your eyes?  Turn on dark mode for a better experience.
 
-😍 Beautiful Look- Completely redesigned to be prettier and cleaner than ever!
+😍 Beautiful Look-  Designed with smooth neumorphism to be prettier and cleaner than ever!
 
 📱 Responsive- SC3 works perfectly to resize on mobile and desktop.  
 
