@@ -19,13 +19,13 @@ var xhttp = new XMLHttpRequest();
       document.getElementById('username').innerHTML = obj.username;
      }
   };
-  xhttp.open("GET", "https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
+  xhttp.open("GET", "https://cors-anywhere.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr), true);
   xhttp.send();
   var all = false;
 	var a = []
   var aa = []
 function fetch1(i = 0){
-		 fetch("https://corsanywherehost.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
+		 fetch("https://cors-anywhere.herokuapp.com/api.scratch.mit.edu/users/" + encodeURIComponent(usr) + "/projects?offset=" + i).then(e=>{
 	 if (e.status !== 200){
 		 // err handle
 	 }
@@ -62,11 +62,11 @@ a.reverse().forEach((obj,idx)=>{
 	 	} if (idxs === 3){
 			 		 document.getElementById('project-4').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/>';
 	 	} */if (idxs === 2){
-			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
+			 		 document.getElementById('project-3').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' class="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 } else if (idxs === 1){
-			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
+			 		 document.getElementById('project-2').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' class="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 } else if (idxs === 0){
-			 		 document.getElementById('project-1').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' id="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
+			 		 document.getElementById('project-1').innerHTML = '<a href = "' + "https://scratch.mit.edu/projects/" + String(obj.id) + '"><img width="300px" src=' + obj.image + ' class="imageBox" style="border-radius: 20px; margin: 20px;"/><br><h3>' + String(obj.title) + '</h3>';
 		 }
 		idxs++
 	 })
@@ -115,7 +115,7 @@ a.reverse().forEach((obj,idx)=>{
 
   return array;
 }*/
-fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr)).then(e=>{
+fetch("https://cors-anywhere.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr)).then(e=>{
      if (e.status !== 200){
          // err handle
      }
@@ -135,9 +135,9 @@ fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeUR
       console.log(dat)
       document.getElementById('featured-project').innerHTML = '<img src = "' + dat.image + '" width="32%" style="border-radius: 20px; margin: 20px">';
       // document.getElementById('featured-project').innerHTML = JSON.stringify(e);
-    })  */  
+    })  */
 })
-fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites").then(e=>{
+fetch("https://cors-anywhere.herokuapp.com/scratch.mit.edu/users/" + encodeURIComponent(usr) + "/favorites").then(e=>{
      if (e.status !== 200){
          // err handle
      }
@@ -158,5 +158,5 @@ fetch("https://corsanywherehost.herokuapp.com/scratch.mit.edu/users/" + encodeUR
       console.log(dat)
       document.getElementById('featured-project').innerHTML = '<img src = "' + dat.image + '" width="32%" style="border-radius: 20px; margin: 20px">';
       // document.getElementById('featured-project').innerHTML = JSON.stringify(e);
-    })  */  
+    })  */
 })
